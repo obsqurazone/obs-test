@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.obsqura.Listeners.TestListener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/user/Documents/obs1/src/test/java/com/obsqura/scripts/RegressionTest.java"><classes><class name="com.obsqura.scripts.RegressionTest">
+        <methods>
+            <include name="SampleTest1"/>
+            <include name="SampleTest2"/>
+        </methods>
+    </class>
+    </classes>
+    </test>
+</suite>

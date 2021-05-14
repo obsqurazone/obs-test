@@ -11,4 +11,5 @@
       <class name="com.obsqura.scripts.SanityTest"/>
     </classes>
   </test> <!-- Test -->
+
 </suite> <!-- Suite -->

@@ -1,5 +1,16 @@
 package com.obsqura.utilities;
 
+import java.util.Random;
+
 public class GenericUtil {
-//create generic utility methods like method to return a random unique 10 digit string
+
+    public static int getRandomNumberForDatePicker(){
+        Random randomGenerator = new Random();
+        int low = 10;
+        int high = 29;
+        int randomInt = randomGenerator.nextInt(high-low)+ low;
+        return randomInt;
+    }
+
+
 }

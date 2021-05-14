@@ -17,8 +17,8 @@ public class RegressionTest extends TestHelper {
     ThreadLocal<ExtentTest> extentTest = TestListener.getTestInstance();
 
 
-    @Test(priority = 0, description = "Invalid Login Scenario with wrong username and password")
-    public void verifyInvalidLogin1(final ITestContext testContext) {
+    //@Test(priority = 0, description = "Invalid Login Scenario with wrong username and password")
+    public void verifyInvalidLogin1() {
         extentTest.get().assignCategory("Regression");
         extentTest.get().assignCategory("PI 5.1");
         login = new Login(driver);
@@ -29,8 +29,8 @@ public class RegressionTest extends TestHelper {
 
     }
 
-    @Test(priority = 1, description = "Invalid Login Scenario with wrong username and password121")
-    public void verifyInvalidLogin2(final ITestContext testContext) {
+    //@Test(priority = 1, description = "Invalid Login Scenario with wrong username and password121")
+    public void verifyInvalidLogin2() {
         extentTest.get().assignCategory("Regression");
         login = new Login(driver);
         extentTest.get().log(Status.PASS, "LOG SOMETHING HERE");
@@ -40,18 +40,18 @@ public class RegressionTest extends TestHelper {
 
     }
 
-    //@Test(priority = 2, description = "Invalid Login Scenario")
+    @Test(priority = 2, description = "Invalid Login Scenario")
     public void verifyInvalidLogin3() {
 
         login = new Login(driver);
         extentTest.get().log(Status.PASS, "LOG SOMETHING HERE");
         homepage = login.login("uName", "pWd");
         extentTest.get().log(Status.PASS, "LOG SOMETHING HERE");
-        Assert.assertTrue(homepage.isHomePageLoaded(), "rdttdtgdsdsd");
+        //Assert.assertTrue(homepage.isHomePageLoaded(), "rdttdtgdsdsd");
 
     }
 
-    @Test(priority = 3, description = "Invalid Login Scenario")
+    //@Test(priority = 3, description = "Invalid Login Scenario")
     public void verifyInvalidLogin4() {
         login = new Login(driver);
         extentTest.get().log(Status.PASS, "THIS STEP IS GOOD");
@@ -65,5 +65,13 @@ public class RegressionTest extends TestHelper {
 
     }
 
+    @Test(priority = 3, description = "dbvalidationtestexample")
+    public void dbValidationTestExample() {
+        extentTest.get().assignCategory("Regression");
+        extentTest.get().assignCategory("PI 5.1");
+        login = new Login(driver);
+        System.out.println("printing db value"+ login.getSampleResultFromDBTable());
+        Assert.assertEquals(login.getSampleResultFromDBTable(),"boy1");
+    }
 
 }

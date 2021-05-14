@@ -68,7 +68,7 @@ public class TestHelper {
     }
 
     @AfterMethod
-    public void tearDown(ITestResult iTestResult, ITestContext iTestContext) throws IOException {
+    public void tearDown(ITestResult iTestResult) throws IOException {
         if (iTestResult.FAILURE == iTestResult.getStatus()) {
             takeScreenshot(iTestResult.getName());
         }

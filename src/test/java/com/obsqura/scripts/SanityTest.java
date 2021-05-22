@@ -5,6 +5,7 @@ import com.aventstack.extentreports.Status;
 import com.obsqura.Listeners.TestListener;
 import com.obsqura.pages.Homepage;
 import com.obsqura.pages.Login;
+import com.obsqura.utilities.ExcelUtility;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
@@ -67,6 +68,17 @@ public class SanityTest extends TestHelper {
     public void verifyUserisAbleToAddComments6() {
         extentTest.get().assignCategory("Sanity");
         login = new Login(driver);
+        extentTest.get().log(Status.PASS, "LOG SOMETHING ABOUT THE SUCCESS OF THIS STEP HERE");
+        Assert.assertTrue(true);
+    }
+
+    @Test(priority = 4, description = "Excel Read")
+    public void verifySampleTest_ReadDataFromExcel() {
+        extentTest.get().assignCategory("Sanity");
+        login = new Login(driver);
+        System.out.println("Printing excel value : "+ExcelUtility.getCellData(0,1));
+        System.out.println("Printing excel value : "+ExcelUtility.getCellData(1,1));
+        login.login(ExcelUtility.getCellData(0,1),ExcelUtility.getCellData(1,1));
         extentTest.get().log(Status.PASS, "LOG SOMETHING ABOUT THE SUCCESS OF THIS STEP HERE");
         Assert.assertTrue(true);
     }

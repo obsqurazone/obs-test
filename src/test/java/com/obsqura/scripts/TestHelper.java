@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.obsqura.ExtentReports.ExtentManager;
 //import com.obsqura.ExtentReports.ExtentTestManager;
+import com.obsqura.utilities.ExcelUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,10 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -73,6 +71,12 @@ public class TestHelper {
             takeScreenshot(iTestResult.getName());
         }
         driver.quit();
+    }
+
+    @BeforeTest
+    public void setupTestData() throws IOException {
+        System.out.println("******************Setup Test Level Data*****************");
+        ExcelUtility.setExcelFileSheet("Sheet1");
     }
 
     public String takeScreenshot(String name) throws IOException {
